@@ -1,0 +1,7 @@
+{
+  "name": "ppsChat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
