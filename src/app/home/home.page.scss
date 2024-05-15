@@ -1,27 +1,34 @@
 #container {
-  text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  left: 0;
-  right: 0;
   top: 50%;
   transform: translateY(-50%);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+
+#container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/img/a.jpeg');
+  background-size: cover;
+  opacity: 0.5; /* Ajusta la opacidad según tu preferencia */
+  z-index: -1; /* Asegura que esté detrás de los elementos hijos */
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.aula{
+  height: 200px;
+  width: auto;
+  border: 3px solid rgb(49, 46, 46);
+  border-radius: 10%;
 }
 
-#container a {
-  text-decoration: none;
+*{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }

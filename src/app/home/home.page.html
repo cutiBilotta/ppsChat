@@ -1,20 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="container" class="ion-text-center">
+    <br>
+    <h2 style="margin-left: 5px; margin-left: 5px;">Ingresando a las aulas podrás chatear con tus compañeros</h2>
+    <h3  style="margin-left: 5px; margin-left: 5px;font-weight: 800;" >Elige el aula para comenzar</h3>
+    <br>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div >
+      <img style="    background-color: rgb(204, 201, 225) " class="aula" src="../../assets/img/4a.png" alt="casa nueva" (click)="seleccionarAula('4A')" >
+    </div>
+    <br><br>
+    <div  >
+      <img style="  background-color: rgb(206, 228, 221); " class="aula" src="../../assets/img/4b.png" alt="casa vieja" (click)="seleccionarAula('4B')" >
+
+    </div>
+
+    <img (click)="cerrarSesion()" src="../../assets/img/logOff.png" height="50px" alt="" style="background-color: brown;position: absolute; bottom: 10px; right: 10px; border-radius: 10%; padding: 5px;">
   </div>
 </ion-content>

@@ -1,0 +1,78 @@
+
+<ion-content>
+  <div id="container">
+
+    <br><br><br><br>
+
+    <div style="display: flex; justify-content: center;">
+      <img src="../../assets/img/chatIcon.png" height="150px">
+    </div>
+
+    <br>
+    <ion-card style="background-color: #cac8c8; text-align: center; justify-content: center;">
+      <ion-card-header class="ion-text-center ion-text-bold">
+        Ingreso Rápido
+      </ion-card-header>
+    
+      <div class="ion-align-items-center ion-text-center" style="display: inline-block;">
+        <ion-button color="medium" block (click)="autocompletarUsurio1()">Admin</ion-button>
+        <br>  
+      </div>
+    
+      <div class="ion-align-items-center ion-text-center" style="display: inline-block;">
+        <ion-button color="medium" block (click)="autocompletarUsurio2()">Invitado</ion-button>
+        <br>  
+      </div>
+    
+      <div class="ion-align-items-center ion-text-center" style="display: inline-block;">
+        <ion-button class="ion-button-small" color="medium" block (click)="autocompletarUsurio3()">Usuario</ion-button>
+        <br>  
+      </div>
+    
+      <br><br><br>
+    
+    
+    
+    
+    </ion-card>
+
+   <ion-card style="background-color: #ddd;" >
+ 
+   <ion-card-header class="ion-text-center ion-text-bold">
+     Login
+    </ion-card-header>
+    <ion-card-content>
+     <ion-item>
+       <ion-label>Email: </ion-label>
+       <ion-input type="email" [(ngModel)]="usuario.correo" name="email"></ion-input>
+     </ion-item>
+     
+     <br> 
+     
+     <ion-item>
+       <ion-label>Password: </ion-label>
+       <ion-input type="password" [(ngModel)]="usuario.password" name="password"></ion-input>
+     </ion-item>
+     
+   <br> 
+     <div class="ion-align-items-center ion-text-center">
+       <ion-button color="tertiary" block (click)="verificarUsuarioExistente()">Ingresar</ion-button>
+       <br>  
+ 
+ 
+       <div *ngIf="mostrarSpinner" class="spinner">
+        <img src="../../assets/img/chatIcon.png" height="30px" class="spinner">
+      </div>
+     </div>
+ 
+ 
+   </ion-card-content>
+ </ion-card>
+
+ 
+ <br>
+ 
+
+ 
+</div>
+ </ion-content>

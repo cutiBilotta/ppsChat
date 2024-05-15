@@ -1,0 +1,39 @@
+
+
+
+<ion-header collapse="fade"  class="ion-no-border" >
+    <ion-toolbar [ngClass]="{'a': aula=='4A', 'b': aula=='4B'}">
+    <ion-title class="ion-text-center" >Chat en Vivo de {{aula}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="chat-background">
+  <br>
+  <div class="message-list" #contenedorDeMensajes>
+    <div *ngFor="let mensaje of mensajes" class="msj">
+      <div class="contenedor-mensaje" 
+           [ngClass]="{
+             'usuario-actual': esUsuarioLogeado(mensaje.emisor.uid),
+             'usuario-ajeno': !esUsuarioLogeado(mensaje.emisor.uid)
+           }">
+           <span style="font-size: small;" *ngIf="!esUsuarioLogeado(mensaje.emisor.uid)">
+            {{ mensaje.emisor.email.split('@')[0] }} - 
+          </span>
+          <span  style="font-size: small;" >{{ mensaje.info }}</span>
+        <p style="font-weight: 600;">{{ mensaje.texto }}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+  <ion-footer style="height: 20%;">
+    <ion-toolbar  >
+      <ion-item [ngClass]="{'a': aula=='4A', 'b': aula=='4B'}">
+        <ion-input style="margin-top: 10px;margin-bottom: 10px;" fill="solid" [(ngModel)]="nuevoMensaje" placeholder="Escribe tu mensaje aquí"></ion-input>
+        <ion-button color="light" (click)="enviarMensaje()" slot="end"><img src="../../assets/img/send.png" height="35px" alt=""></ion-button>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>
+
+
+
